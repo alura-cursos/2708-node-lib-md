@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/alura-cursos/2708-node-lib-md/issues"
   },
-  "homepage": "https://github.com/alura-cursos/2708-node-lib-md#readme"
+  "homepage": "https://github.com/alura-cursos/2708-node-lib-md#readme",
+  "dependencies": {
+    "chalk": "5.0.1"
+  }
 }
