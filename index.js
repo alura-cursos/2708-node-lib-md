@@ -7,10 +7,18 @@ function trataErro(erro){
 function pegaArquivo(caminhoDoArquivo) {
     const enconding = 'utf-8';
     fs.readFile(caminhoDoArquivo, enconding, (erro, texto) => {
-        if(erro){
-            trataErro(chalk.red(erro.code, 'não há arquivo no diretório'));
+        const arrayErrors = {
+            'EACCES':'Acesso ao arquivo negado, por favor verifique suas permissões', 
+            'EEXIST':'O arquivo exite porém referência outro arquivo não existente',
+            'EISDIR':'A operação esperava um arquivo porém encontrou um diretório',
+            'ENOENT':'O arquivo ou diretório não existem',
+            'ENOTDIR':'Esperava um diretório, porém não encontrou'
         }
-        console.log(chalk.green(texto));
+
+        if(erro){
+                    trataErro(chalk.red(erro.code, arrayErrors[erro.code])); 
+    }
+            console.log(chalk.green(texto));
     } )
 }
-pegaArquivo('./arquivos/texto.md'); 
+pegaArquivo('./arquivos/texto.md');
