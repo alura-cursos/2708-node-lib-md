@@ -5,3 +5,4 @@
     * Tratamento de Erros
     * Chalk
     * Manipulação de Arquivos 
+    * Expressões Regulares
