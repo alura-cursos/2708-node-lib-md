@@ -9,7 +9,6 @@ const arrayErrors = {
     'ENOENT':'O arquivo ou diretório não existem',
     'ENOTDIR':'Esperava um diretório, porém não encontrou'
 };
-
 const enconding = 'utf-8';
 
 function extraiLinks(texto){
@@ -29,7 +28,7 @@ function trataErro(erro){
 async function pegaArquivo(caminhoDoArquivo) {
     try{
         const texto = await fs.promises.readFile(caminhoDoArquivo, enconding);
-         return extraiLinks(texto);
+        return extraiLinks(texto);
     }
     catch(erro){
         trataErro(erro);
